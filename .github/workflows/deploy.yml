@@ -24,9 +24,9 @@ jobs:
  #   - name: Copy files via SCP
  #     env:
  #       SSHPASS: ${{ secrets.SSH_PASSWORD }}
- #     run: sshpass -e scp -r ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/website
+ #     run: sshpass -e scp -r ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/web
 
     - name: Execute command on VPS
       env:
         SSHPASS: ${{ secrets.SSH_PASSWORD }}
-      run: sshpass -e ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 stop test-server && cd basic-deploy && npm install && pm2 start test-server &"
+      run: sshpass -e ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 stop web && cd basic-deploy && npm install && pm2 start web &"
