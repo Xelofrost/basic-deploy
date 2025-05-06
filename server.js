@@ -10,8 +10,8 @@ const app = express();
 const PORT = 3000;
 
 // Configuración de variables de entorno
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
-const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 // Configuración de sesión
 app.use(session({
@@ -27,8 +27,8 @@ app.use(express.json());
 
 // Configurar estrategia de GitHub
 passport.use(new GitHubStrategy({
-    clientID: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
+    clientID: CLIENT_ID,
+    clientSecret: CLIENT_SECRET,
     callbackURL: "http://localhost:3000/auth/github/callback"
   },
   (accessToken, refreshToken, profile, done) => {
