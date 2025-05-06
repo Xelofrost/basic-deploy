@@ -29,7 +29,7 @@ app.use(express.json());
 passport.use(new GitHubStrategy({
     clientID: CLIENT_ID,
     clientSecret: CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/callback"
+    callbackURL: "http://172.233.109.222:3000/auth/github/callback"
   },
   (accessToken, refreshToken, profile, done) => {
     if (profile.username === 'Xelofrost') {
