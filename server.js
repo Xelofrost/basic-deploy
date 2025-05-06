@@ -87,7 +87,7 @@ app.post("/recon", ensureAuth, (req, res) => {
 // Manejo de errores
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.send('Error interno<br><a href="/">Inicio</a>');
+  res.send('Error interno <br><a href="/">Inicio</a>');
 });
 
 app.listen(PORT, () => console.log(`Servidor activo: http://localhost:${PORT}`));
